@@ -1,4 +1,4 @@
-// WAP to find the maximum element in an array.
+// WAP to find the minimum element in an array.
 //
 // Example:
 // Input:
@@ -6,20 +6,19 @@
 // Enter elements: 10 50 20 90 40
 //
 // Output:
-// Maximum element: 90
+// Minimum element: 90
 
 #include <iostream>
 #include <vector>
 #include <limits.h>
 using namespace std;
-
-// Function to find maximum element in an array
-int findMaximum(vector<int>& arr) {
-    int maxi = INT_MIN;
+ 
+int findMinimum(vector<int>& arr) {
+    int mini = INT_MAX;
     for (int i = 0; i < arr.size(); i++) {
-        maxi = max(maxi, arr[i]);
+        mini = min(mini, arr[i]);
     }
-    return maxi;
+    return mini;
 }
 
 int main() {
@@ -33,7 +32,7 @@ int main() {
         cin >> arr[i];
     }
 
-    cout << "Maximum element: " << findMaximum(arr) << endl;
+    cout << "Minimum element: " << findMinimum(arr) << endl;
 
     return 0;
 }
