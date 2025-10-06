@@ -1,5 +1,5 @@
 /*
-🔹 WAP to check if there exists a pair of elements in the array whose sum equals a given target. BRUTE TC:O(n*n)approx
+🔹 WAP to check if there exists a pair of elements in the array whose sum equals a given target. BETTER TC:O(n*n)approx
 
 🔹 Example:
    Input:
