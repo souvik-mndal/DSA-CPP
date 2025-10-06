@@ -1,6 +1,6 @@
 /*
 🔹 WAP to find the single non-repeating element in an array 
-   where every other element appears twice. BRUTE TC:O(n*n)
+   where every other element appears twice. BETTER TC:O(nlogn)+O(n) SC:O(n)
 
 🔹 Approach:
    - For each element, check if it has a duplicate.
@@ -16,29 +16,28 @@
 */
 
 #include <iostream>
+#include <map>
 #include <vector>
 using namespace std;
 
-
-int singleNumber(vector<int>& nums) {
-    int n = nums.size();
-    for (int i = 0; i < n; i++) {
-        bool find = 0;
-        for (int j = 0; j < n; j++) {
-            if (i == j) continue;
-            else if (nums[i] == nums[j]) {
-                find = 1;
-                break;
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        map<int,int>mp;
+        for( int i=0 ; i<nums.size() ; i++ ){
+            mp[nums[i]]++;
+        }
+        for( auto it:mp ){
+            if( it.second == 1 ){
+                return it.first;
             }
         }
-        if (!find) {
-            return nums[i];
-        }
+        return -1;
     }
-    return -1;
-}
+};
 
 int main() {
+    Solution obj;
     int n;
     cout << "Enter the size of array: ";
     cin >> n;
@@ -49,7 +48,7 @@ int main() {
         cin >> nums[i];
     }
 
-    int ans = singleNumber(nums);
+    int ans = obj.singleNumber(nums);
     cout << "The single non-repeating element is: " << ans << endl;
 
     return 0;
