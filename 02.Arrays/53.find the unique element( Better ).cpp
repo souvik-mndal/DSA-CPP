@@ -20,24 +20,20 @@
 #include <vector>
 using namespace std;
 
-class Solution {
-public:
-    int singleNumber(vector<int>& nums) {
-        map<int,int>mp;
-        for( int i=0 ; i<nums.size() ; i++ ){
-            mp[nums[i]]++;
-        }
-        for( auto it:mp ){
-            if( it.second == 1 ){
-                return it.first;
-            }
-        }
-        return -1;
+int singleNumber(vector<int>& nums) {
+    map<int,int>mp;
+    for( int i=0 ; i<nums.size() ; i++ ){
+        mp[nums[i]]++;
     }
-};
+    for( auto it:mp ){
+        if( it.second == 1 ){
+            return it.first;
+        }
+    }
+    return -1;
+}
 
-int main() {
-    Solution obj;
+int main() { 
     int n;
     cout << "Enter the size of array: ";
     cin >> n;
@@ -48,7 +44,7 @@ int main() {
         cin >> nums[i];
     }
 
-    int ans = obj.singleNumber(nums);
+    int ans = singleNumber(nums);
     cout << "The single non-repeating element is: " << ans << endl;
 
     return 0;
