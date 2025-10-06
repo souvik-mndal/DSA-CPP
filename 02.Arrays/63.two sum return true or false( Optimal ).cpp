@@ -1,5 +1,5 @@
 /*
-🔹 WAP to check if there exists a pair of elements in the array whose sum equals a given target. BRUTE TC:O(nlogn)+O(n)
+🔹 WAP to check if there exists a pair of elements in the array whose sum equals a given target. OPTIMAL TC:O(nlogn)+O(n)
 
 🔹 Example:
    Input:
